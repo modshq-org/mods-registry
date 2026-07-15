@@ -1,0 +1,23 @@
+id: ernie-image-vae
+name: "ERNIE-Image VAE"
+type: vae
+visibility: internal
+architecture: ernie-image
+author: Baidu
+license: apache-2.0
+homepage: https://huggingface.co/baidu/ERNIE-Image
+description: |
+  AutoencoderKLFlux2-style VAE for ERNIE-Image and ERNIE-Image-Turbo.
+  Shared dependency — downloaded once for both models.
+
+file:
+  url: https://huggingface.co/baidu/ERNIE-Image/resolve/main/vae/diffusion_pytorch_model.safetensors
+  sha256: "4c88adde2b0936f05dbc7d09e3701b2764507059c6510ab326f8df22c4ecc237"
+  size: 168120878
+  format: safetensors
+
+tags: [ernie, vae, baidu]
+
+downloads: 0
+added: "2026-04-16"
+updated: "2026-04-16"

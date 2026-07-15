@@ -1,0 +1,125 @@
+id: ernie-image-turbo
+name: "ERNIE-Image-Turbo"
+type: diffusion_model
+architecture: ernie-image
+author: Baidu / unsloth
+license: apache-2.0
+homepage: https://huggingface.co/baidu/ERNIE-Image-Turbo
+description: |
+  ERNIE-Image-Turbo — distilled 8B DiT text-to-image model by Baidu.
+  Optimized via DMD and RL for fast generation in only 8 inference steps
+  while retaining strong fidelity, text rendering, and structured generation.
+  Same architecture as ERNIE-Image with shared text encoder and VAE.
+  Includes optional prompt enhancer (PE) for richer descriptions.
+  Available as native safetensors and GGUF quantizations (unsloth Dynamic 2.0).
+
+variants:
+  # Native bf16 from baidu/ERNIE-Image-Turbo is sharded into two safetensors
+  # files; the installer resolves exactly one file per variant, so it is
+  # omitted until a single-file repack exists (or multi-file variants are
+  # supported).
+  # --- GGUF quantizations (unsloth Dynamic 2.0) ---
+  - id: gguf-bf16
+    file: ernie-image-turbo-BF16.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-BF16.gguf
+    sha256: "d0539cf2eeba43a7b1256cc8cfc711b9d94c00f832981199933c5e67f1989a7c"
+    size: 16067707584
+    format: gguf
+    precision: bf16
+    vram_required: 28672
+    vram_recommended: 32768
+    note: "Full precision bf16 GGUF."
+
+  - id: gguf-q8-0
+    file: ernie-image-turbo-Q8_0.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q8_0.gguf
+    sha256: "72ba7e0740625422ef0e10c3d41e54f2d761c9491363c7df4a87ddf229c80403"
+    size: 8694907584
+    format: gguf
+    precision: q8_0
+    vram_required: 16384
+    vram_recommended: 20480
+    note: "GGUF Q8_0 — best quantized quality, unsloth Dynamic 2.0."
+
+  - id: gguf-q6-k
+    file: ernie-image-turbo-Q6_K.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q6_K.gguf
+    sha256: "ac9aef1efb7b18f2b79530a9296ef2fbfc083617830e9ca934b41c05f1704a25"
+    size: 6790267584
+    format: gguf
+    precision: q6_k
+    vram_required: 14336
+    vram_recommended: 16384
+    note: "GGUF Q6_K — great quality/size balance, unsloth Dynamic 2.0."
+
+  - id: gguf-q5-k-m
+    file: ernie-image-turbo-Q5_K_M.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q5_K_M.gguf
+    sha256: "78722fbf1c483e7c27ff5e912cfb5830ee86d2c4be10841271b6d8e5bfda0c3d"
+    size: 5932958400
+    format: gguf
+    precision: q5_k_m
+    vram_required: 12288
+    vram_recommended: 14336
+    note: "GGUF Q5_K_M — recommended for 12GB+ GPUs, unsloth Dynamic 2.0."
+
+  - id: gguf-q4-k-m
+    file: ernie-image-turbo-Q4_K_M.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q4_K_M.gguf
+    sha256: "7edebc87e0529d8c1ecbc42ffcf06a54c95593f614768ed93540dd94e32168b0"
+    size: 5019124416
+    format: gguf
+    precision: q4_k_m
+    vram_required: 10240
+    vram_recommended: 12288
+    note: "GGUF Q4_K_M — good for 10GB+ GPUs, unsloth Dynamic 2.0."
+
+  - id: gguf-q3-k-m
+    file: ernie-image-turbo-Q3_K_M.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q3_K_M.gguf
+    sha256: "4d91f7057115956e2591a1685ec99ed8e9666a868859143fc291b1d513d20e67"
+    size: 3909632704
+    format: gguf
+    precision: q3_k_m
+    vram_required: 8192
+    vram_recommended: 10240
+    note: "GGUF Q3_K_M — budget option, unsloth Dynamic 2.0."
+
+  - id: gguf-q2-k
+    file: ernie-image-turbo-Q2_K.gguf
+    url: https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q2_K.gguf
+    sha256: "95890e2ced0fab4a1ea3bd0368b818e2919073f811bf662b073d7a7bf569ff4d"
+    size: 3178545856
+    format: gguf
+    precision: q2_k
+    vram_required: 6144
+    vram_recommended: 8192
+    note: "GGUF Q2_K — smallest, unsloth Dynamic 2.0."
+
+requires:
+  - id: ernie-image-text-encoder
+    type: text_encoder
+    reason: "Ministral 3B text encoder for prompt processing"
+  - id: ernie-image-vae
+    type: vae
+    reason: "Flux2-style VAE for decoding latents to images"
+
+defaults:
+  steps: 8
+  cfg: 1.0
+  sampler: euler
+  scheduler: flowmatch
+
+tags:
+  - ernie
+  - text-to-image
+  - turbo
+  - fast-inference
+  - baidu
+  - dit
+  - bilingual
+  - gguf
+
+downloads: 0
+added: "2026-04-16"
+updated: "2026-04-16"

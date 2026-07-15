@@ -1,0 +1,23 @@
+id: ernie-image-text-encoder
+name: "ERNIE-Image Ministral 3B Text Encoder"
+type: text_encoder
+visibility: internal
+architecture: ernie-image
+author: Baidu
+license: apache-2.0
+homepage: https://huggingface.co/baidu/ERNIE-Image
+description: |
+  Ministral 3B (Mistral3Model) text encoder used by ERNIE-Image and ERNIE-Image-Turbo.
+  Shared dependency — downloaded once for both models.
+
+file:
+  url: https://huggingface.co/baidu/ERNIE-Image/resolve/main/text_encoder/model.safetensors
+  sha256: "2a22fd3bf83d56eed4ee8a7ddbe220281cc9fc622b4e8a6d250c8ffdff11b443"
+  size: 7698241104
+  format: safetensors
+
+tags: [ernie, text-encoder, ministral, baidu]
+
+downloads: 0
+added: "2026-04-16"
+updated: "2026-04-16"

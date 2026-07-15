@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "generated_at": "2026-04-12T16:47:03Z",
-  "total_count": 91,
+  "generated_at": "2026-07-15T23:12:59Z",
+  "total_count": 95,
   "type_counts": {
     "upscaler": 3,
     "segmentation": 2,
     "vision_language": 7,
     "checkpoint": 11,
-    "text_encoder": 11,
+    "text_encoder": 12,
     "analysis": 4,
-    "diffusion_model": 20,
+    "diffusion_model": 22,
+    "vae": 11,
     "controlnet": 10,
     "recipe": 4,
     "ipadapter": 3,
-    "vae": 10,
     "lora": 6
   },
   "cloud_available_count": 8,
@@ -265,6 +265,309 @@
       ],
       "added": "2026-03-08",
       "updated": "2026-03-08"
+    },
+    {
+      "id": "ernie-image",
+      "name": "ERNIE-Image",
+      "type": "diffusion_model",
+      "architecture": "ernie-image",
+      "author": "Baidu / unsloth",
+      "license": "apache-2.0",
+      "homepage": "https://huggingface.co/baidu/ERNIE-Image",
+      "description": "ERNIE-Image — 8B parameter single-stream DiT text-to-image model by Baidu.\nUses Ministral 3B as text encoder and Flux2-style VAE. Includes optional\nprompt enhancer (PE) that expands short inputs into richer descriptions.\nStrong instruction following, text rendering, and structured generation\n(posters, comics, multi-panel layouts). Supports bilingual prompts (EN/ZH).\n50 inference steps recommended. See also ERNIE-Image-Turbo for 8-step fast generation.\nAvailable as native safetensors and GGUF quantizations (unsloth Dynamic 2.0).\n",
+      "variants": [
+        {
+          "id": "gguf-bf16",
+          "file": "ernie-image-BF16.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-BF16.gguf",
+          "sha256": "6ed1a44d5dcd48b63d8c1efb3bad435f3cdf76f5123f1088a36fd45f32dc0ec5",
+          "size": 16067707584,
+          "format": "gguf",
+          "precision": "bf16",
+          "vram_required": 28672,
+          "vram_recommended": 32768,
+          "note": "Full precision bf16 GGUF."
+        },
+        {
+          "id": "gguf-q8-0",
+          "file": "ernie-image-Q8_0.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q8_0.gguf",
+          "sha256": "1fbaeb59b65f0c2da8a94bf081cc3070656abf9db1c624bb77873231d5bafe79",
+          "size": 8694907584,
+          "format": "gguf",
+          "precision": "q8_0",
+          "vram_required": 16384,
+          "vram_recommended": 20480,
+          "note": "GGUF Q8_0 — best quantized quality, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q6-k",
+          "file": "ernie-image-Q6_K.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q6_K.gguf",
+          "sha256": "3856e90d6f578b3ba1cfd55d632d28da7795778647661631e337f6119d697184",
+          "size": 6790267584,
+          "format": "gguf",
+          "precision": "q6_k",
+          "vram_required": 14336,
+          "vram_recommended": 16384,
+          "note": "GGUF Q6_K — great quality/size balance, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q5-k-m",
+          "file": "ernie-image-Q5_K_M.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q5_K_M.gguf",
+          "sha256": "4ce6f0f7522ce352550f5a998684f997c9e9a3f01335482af389494f5440837f",
+          "size": 5932958400,
+          "format": "gguf",
+          "precision": "q5_k_m",
+          "vram_required": 12288,
+          "vram_recommended": 14336,
+          "note": "GGUF Q5_K_M — recommended for 12GB+ GPUs, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q4-k-m",
+          "file": "ernie-image-Q4_K_M.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q4_K_M.gguf",
+          "sha256": "d8bcc9015692c964828c356c9888cc296f0a83aeacd3c2e52f1e0c06047fdd82",
+          "size": 5019124416,
+          "format": "gguf",
+          "precision": "q4_k_m",
+          "vram_required": 10240,
+          "vram_recommended": 12288,
+          "note": "GGUF Q4_K_M — good for 10GB+ GPUs, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q3-k-m",
+          "file": "ernie-image-Q3_K_M.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q3_K_M.gguf",
+          "sha256": "fe258cb361db90c72e166778bbd7f78c8bf42860af495d938b3725a8407ec480",
+          "size": 3909632704,
+          "format": "gguf",
+          "precision": "q3_k_m",
+          "vram_required": 8192,
+          "vram_recommended": 10240,
+          "note": "GGUF Q3_K_M — budget option, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q2-k",
+          "file": "ernie-image-Q2_K.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q2_K.gguf",
+          "sha256": "3051ef978ae0c49c9acffe18289d48e48cc5ee794e4c4928af97f11c4aab1401",
+          "size": 3178545856,
+          "format": "gguf",
+          "precision": "q2_k",
+          "vram_required": 6144,
+          "vram_recommended": 8192,
+          "note": "GGUF Q2_K — smallest, unsloth Dynamic 2.0."
+        }
+      ],
+      "requires": [
+        {
+          "id": "ernie-image-text-encoder",
+          "type": "text_encoder",
+          "reason": "Ministral 3B text encoder for prompt processing"
+        },
+        {
+          "id": "ernie-image-vae",
+          "type": "vae",
+          "reason": "Flux2-style VAE for decoding latents to images"
+        }
+      ],
+      "defaults": {
+        "steps": 50,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "flowmatch"
+      },
+      "tags": [
+        "ernie",
+        "text-to-image",
+        "baidu",
+        "dit",
+        "bilingual",
+        "gguf"
+      ],
+      "downloads": 0,
+      "added": "2026-04-16",
+      "updated": "2026-04-16"
+    },
+    {
+      "id": "ernie-image-text-encoder",
+      "name": "ERNIE-Image Ministral 3B Text Encoder",
+      "type": "text_encoder",
+      "visibility": "internal",
+      "architecture": "ernie-image",
+      "author": "Baidu",
+      "license": "apache-2.0",
+      "homepage": "https://huggingface.co/baidu/ERNIE-Image",
+      "description": "Ministral 3B (Mistral3Model) text encoder used by ERNIE-Image and ERNIE-Image-Turbo.\nShared dependency — downloaded once for both models.\n",
+      "file": {
+        "url": "https://huggingface.co/baidu/ERNIE-Image/resolve/main/text_encoder/model.safetensors",
+        "sha256": "2a22fd3bf83d56eed4ee8a7ddbe220281cc9fc622b4e8a6d250c8ffdff11b443",
+        "size": 7698241104,
+        "format": "safetensors"
+      },
+      "tags": [
+        "ernie",
+        "text-encoder",
+        "ministral",
+        "baidu"
+      ],
+      "downloads": 0,
+      "added": "2026-04-16",
+      "updated": "2026-04-16"
+    },
+    {
+      "id": "ernie-image-turbo",
+      "name": "ERNIE-Image-Turbo",
+      "type": "diffusion_model",
+      "architecture": "ernie-image",
+      "author": "Baidu / unsloth",
+      "license": "apache-2.0",
+      "homepage": "https://huggingface.co/baidu/ERNIE-Image-Turbo",
+      "description": "ERNIE-Image-Turbo — distilled 8B DiT text-to-image model by Baidu.\nOptimized via DMD and RL for fast generation in only 8 inference steps\nwhile retaining strong fidelity, text rendering, and structured generation.\nSame architecture as ERNIE-Image with shared text encoder and VAE.\nIncludes optional prompt enhancer (PE) for richer descriptions.\nAvailable as native safetensors and GGUF quantizations (unsloth Dynamic 2.0).\n",
+      "variants": [
+        {
+          "id": "gguf-bf16",
+          "file": "ernie-image-turbo-BF16.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-BF16.gguf",
+          "sha256": "d0539cf2eeba43a7b1256cc8cfc711b9d94c00f832981199933c5e67f1989a7c",
+          "size": 16067707584,
+          "format": "gguf",
+          "precision": "bf16",
+          "vram_required": 28672,
+          "vram_recommended": 32768,
+          "note": "Full precision bf16 GGUF."
+        },
+        {
+          "id": "gguf-q8-0",
+          "file": "ernie-image-turbo-Q8_0.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q8_0.gguf",
+          "sha256": "72ba7e0740625422ef0e10c3d41e54f2d761c9491363c7df4a87ddf229c80403",
+          "size": 8694907584,
+          "format": "gguf",
+          "precision": "q8_0",
+          "vram_required": 16384,
+          "vram_recommended": 20480,
+          "note": "GGUF Q8_0 — best quantized quality, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q6-k",
+          "file": "ernie-image-turbo-Q6_K.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q6_K.gguf",
+          "sha256": "ac9aef1efb7b18f2b79530a9296ef2fbfc083617830e9ca934b41c05f1704a25",
+          "size": 6790267584,
+          "format": "gguf",
+          "precision": "q6_k",
+          "vram_required": 14336,
+          "vram_recommended": 16384,
+          "note": "GGUF Q6_K — great quality/size balance, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q5-k-m",
+          "file": "ernie-image-turbo-Q5_K_M.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q5_K_M.gguf",
+          "sha256": "78722fbf1c483e7c27ff5e912cfb5830ee86d2c4be10841271b6d8e5bfda0c3d",
+          "size": 5932958400,
+          "format": "gguf",
+          "precision": "q5_k_m",
+          "vram_required": 12288,
+          "vram_recommended": 14336,
+          "note": "GGUF Q5_K_M — recommended for 12GB+ GPUs, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q4-k-m",
+          "file": "ernie-image-turbo-Q4_K_M.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q4_K_M.gguf",
+          "sha256": "7edebc87e0529d8c1ecbc42ffcf06a54c95593f614768ed93540dd94e32168b0",
+          "size": 5019124416,
+          "format": "gguf",
+          "precision": "q4_k_m",
+          "vram_required": 10240,
+          "vram_recommended": 12288,
+          "note": "GGUF Q4_K_M — good for 10GB+ GPUs, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q3-k-m",
+          "file": "ernie-image-turbo-Q3_K_M.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q3_K_M.gguf",
+          "sha256": "4d91f7057115956e2591a1685ec99ed8e9666a868859143fc291b1d513d20e67",
+          "size": 3909632704,
+          "format": "gguf",
+          "precision": "q3_k_m",
+          "vram_required": 8192,
+          "vram_recommended": 10240,
+          "note": "GGUF Q3_K_M — budget option, unsloth Dynamic 2.0."
+        },
+        {
+          "id": "gguf-q2-k",
+          "file": "ernie-image-turbo-Q2_K.gguf",
+          "url": "https://huggingface.co/unsloth/ERNIE-Image-Turbo-GGUF/resolve/main/ernie-image-turbo-Q2_K.gguf",
+          "sha256": "95890e2ced0fab4a1ea3bd0368b818e2919073f811bf662b073d7a7bf569ff4d",
+          "size": 3178545856,
+          "format": "gguf",
+          "precision": "q2_k",
+          "vram_required": 6144,
+          "vram_recommended": 8192,
+          "note": "GGUF Q2_K — smallest, unsloth Dynamic 2.0."
+        }
+      ],
+      "requires": [
+        {
+          "id": "ernie-image-text-encoder",
+          "type": "text_encoder",
+          "reason": "Ministral 3B text encoder for prompt processing"
+        },
+        {
+          "id": "ernie-image-vae",
+          "type": "vae",
+          "reason": "Flux2-style VAE for decoding latents to images"
+        }
+      ],
+      "defaults": {
+        "steps": 8,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "flowmatch"
+      },
+      "tags": [
+        "ernie",
+        "text-to-image",
+        "turbo",
+        "fast-inference",
+        "baidu",
+        "dit",
+        "bilingual",
+        "gguf"
+      ],
+      "downloads": 0,
+      "added": "2026-04-16",
+      "updated": "2026-04-16"
+    },
+    {
+      "id": "ernie-image-vae",
+      "name": "ERNIE-Image VAE",
+      "type": "vae",
+      "visibility": "internal",
+      "architecture": "ernie-image",
+      "author": "Baidu",
+      "license": "apache-2.0",
+      "homepage": "https://huggingface.co/baidu/ERNIE-Image",
+      "description": "AutoencoderKLFlux2-style VAE for ERNIE-Image and ERNIE-Image-Turbo.\nShared dependency — downloaded once for both models.\n",
+      "file": {
+        "url": "https://huggingface.co/baidu/ERNIE-Image/resolve/main/vae/diffusion_pytorch_model.safetensors",
+        "sha256": "4c88adde2b0936f05dbc7d09e3701b2764507059c6510ab326f8df22c4ecc237",
+        "size": 168120878,
+        "format": "safetensors"
+      },
+      "tags": [
+        "ernie",
+        "vae",
+        "baidu"
+      ],
+      "downloads": 0,
+      "added": "2026-04-16",
+      "updated": "2026-04-16"
     },
     {
       "id": "florence-2-base",
@@ -1661,8 +1964,8 @@
           "id": "fp8",
           "file": "flux-2-klein-9b-kv-fp8.safetensors",
           "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-kv-fp8/resolve/main/flux-2-klein-9b-kv-fp8.safetensors",
-          "sha256": "VERIFY_0000000000000000000000000000000000000000000000000000000000000000",
-          "size": 9820000000,
+          "sha256": "b8763ddd83d92fb7592fdb30153fd46521dc7b610e919e20159825964f4711c7",
+          "size": 9818935984,
           "format": "safetensors",
           "precision": "fp8",
           "vram_required": 12288,
@@ -2168,8 +2471,8 @@
           "id": "fp8-dev",
           "file": "ltx-2.3-22b-dev-fp8.safetensors",
           "url": "https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/main/ltx-2.3-22b-dev-fp8.safetensors",
-          "sha256": "VERIFY_ltx23_dev_fp8",
-          "size": 30508171264,
+          "sha256": "94d11e676b844dd40d74196f059f8b6fdc0fa5c6a07ed9db72d91be06910640a",
+          "size": 29145431166,
           "format": "safetensors",
           "precision": "fp8",
           "vram_required": 36864
@@ -2178,8 +2481,8 @@
           "id": "fp8-distilled",
           "file": "ltx-2.3-22b-distilled-fp8.safetensors",
           "url": "https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/main/ltx-2.3-22b-distilled-fp8.safetensors",
-          "sha256": "VERIFY_ltx23_distilled_fp8",
-          "size": 30927667200,
+          "sha256": "ea4fcbbc1750e8e6be52f7cbc8910c368cab224885264805908658ca8d103cd2",
+          "size": 29531884062,
           "format": "safetensors",
           "precision": "fp8",
           "vram_required": 36864
