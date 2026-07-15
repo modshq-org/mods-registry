@@ -16,8 +16,8 @@ variants:
   - id: fp8
     file: flux-2-klein-9b-kv-fp8.safetensors
     url: https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-kv-fp8/resolve/main/flux-2-klein-9b-kv-fp8.safetensors
-    sha256: "VERIFY_0000000000000000000000000000000000000000000000000000000000000000"
-    size: 9820000000
+    sha256: "b8763ddd83d92fb7592fdb30153fd46521dc7b610e919e20159825964f4711c7"
+    size: 9818935984
     format: safetensors
     precision: fp8
     vram_required: 12288

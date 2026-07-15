@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-07-15T23:07:35Z",
+  "generated_at": "2026-07-15T23:12:59Z",
   "total_count": 95,
   "type_counts": {
     "upscaler": 3,
@@ -1964,8 +1964,8 @@
           "id": "fp8",
           "file": "flux-2-klein-9b-kv-fp8.safetensors",
           "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-kv-fp8/resolve/main/flux-2-klein-9b-kv-fp8.safetensors",
-          "sha256": "VERIFY_0000000000000000000000000000000000000000000000000000000000000000",
-          "size": 9820000000,
+          "sha256": "b8763ddd83d92fb7592fdb30153fd46521dc7b610e919e20159825964f4711c7",
+          "size": 9818935984,
           "format": "safetensors",
           "precision": "fp8",
           "vram_required": 12288,
@@ -2471,8 +2471,8 @@
           "id": "fp8-dev",
           "file": "ltx-2.3-22b-dev-fp8.safetensors",
           "url": "https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/main/ltx-2.3-22b-dev-fp8.safetensors",
-          "sha256": "VERIFY_ltx23_dev_fp8",
-          "size": 30508171264,
+          "sha256": "94d11e676b844dd40d74196f059f8b6fdc0fa5c6a07ed9db72d91be06910640a",
+          "size": 29145431166,
           "format": "safetensors",
           "precision": "fp8",
           "vram_required": 36864
@@ -2481,8 +2481,8 @@
           "id": "fp8-distilled",
           "file": "ltx-2.3-22b-distilled-fp8.safetensors",
           "url": "https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/main/ltx-2.3-22b-distilled-fp8.safetensors",
-          "sha256": "VERIFY_ltx23_distilled_fp8",
-          "size": 30927667200,
+          "sha256": "ea4fcbbc1750e8e6be52f7cbc8910c368cab224885264805908658ca8d103cd2",
+          "size": 29531884062,
           "format": "safetensors",
           "precision": "fp8",
           "vram_required": 36864

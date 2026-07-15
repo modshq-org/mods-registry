@@ -15,16 +15,16 @@ variants:
   - id: fp8-dev
     file: ltx-2.3-22b-dev-fp8.safetensors
     url: https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/main/ltx-2.3-22b-dev-fp8.safetensors
-    sha256: "VERIFY_ltx23_dev_fp8"
-    size: 30508171264
+    sha256: "94d11e676b844dd40d74196f059f8b6fdc0fa5c6a07ed9db72d91be06910640a"
+    size: 29145431166
     format: safetensors
     precision: fp8
     vram_required: 36864
   - id: fp8-distilled
     file: ltx-2.3-22b-distilled-fp8.safetensors
     url: https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/main/ltx-2.3-22b-distilled-fp8.safetensors
-    sha256: "VERIFY_ltx23_distilled_fp8"
-    size: 30927667200
+    sha256: "ea4fcbbc1750e8e6be52f7cbc8910c368cab224885264805908658ca8d103cd2"
+    size: 29531884062
     format: safetensors
     precision: fp8
     vram_required: 36864
