@@ -12,12 +12,12 @@ description: |
 
 file:
   url: https://huggingface.co/baidu/ERNIE-Image/resolve/main/vae/diffusion_pytorch_model.safetensors
-  sha256: "VERIFY_HASH_ernie_image_vae"
-  size: 335000000
+  sha256: "4c88adde2b0936f05dbc7d09e3701b2764507059c6510ab326f8df22c4ecc237"
+  size: 168120878
   format: safetensors
 
 tags: [ernie, vae, baidu]
-rating: 5.0
-downloads: 348
+
+downloads: 0
 added: "2026-04-16"
 updated: "2026-04-16"

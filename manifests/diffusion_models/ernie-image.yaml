@@ -15,35 +15,15 @@ description: |
   Available as native safetensors and GGUF quantizations (unsloth Dynamic 2.0).
 
 variants:
-  # --- Native safetensors (bf16, from baidu/ERNIE-Image) ---
-  - id: bf16
-    file: diffusion_pytorch_model-00001-of-00002.safetensors
-    url: https://huggingface.co/baidu/ERNIE-Image/resolve/main/transformer/diffusion_pytorch_model-00001-of-00002.safetensors
-    sha256: "VERIFY_HASH_ernie_image_bf16_shard1"
-    size: 9990000000
-    format: safetensors
-    precision: bf16
-    vram_required: 28672
-    vram_recommended: 32768
-    note: "Full precision bf16 shard 1/2. Best quality, needs 28GB+ VRAM."
-
-  - id: bf16-shard2
-    file: diffusion_pytorch_model-00002-of-00002.safetensors
-    url: https://huggingface.co/baidu/ERNIE-Image/resolve/main/transformer/diffusion_pytorch_model-00002-of-00002.safetensors
-    sha256: "VERIFY_HASH_ernie_image_bf16_shard2"
-    size: 6070000000
-    format: safetensors
-    precision: bf16
-    vram_required: 28672
-    vram_recommended: 32768
-    note: "Full precision bf16 shard 2/2."
-
+  # Native bf16 from baidu/ERNIE-Image is sharded into two safetensors files;
+  # the installer resolves exactly one file per variant, so it is omitted
+  # until a single-file repack exists (or multi-file variants are supported).
   # --- GGUF quantizations (unsloth Dynamic 2.0) ---
   - id: gguf-bf16
     file: ernie-image-BF16.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-BF16.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_bf16"
-    size: 16100000000
+    sha256: "6ed1a44d5dcd48b63d8c1efb3bad435f3cdf76f5123f1088a36fd45f32dc0ec5"
+    size: 16067707584
     format: gguf
     precision: bf16
     vram_required: 28672
@@ -53,8 +33,8 @@ variants:
   - id: gguf-q8-0
     file: ernie-image-Q8_0.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q8_0.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_q8_0"
-    size: 8690000000
+    sha256: "1fbaeb59b65f0c2da8a94bf081cc3070656abf9db1c624bb77873231d5bafe79"
+    size: 8694907584
     format: gguf
     precision: q8_0
     vram_required: 16384
@@ -64,8 +44,8 @@ variants:
   - id: gguf-q6-k
     file: ernie-image-Q6_K.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q6_K.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_q6_k"
-    size: 6790000000
+    sha256: "3856e90d6f578b3ba1cfd55d632d28da7795778647661631e337f6119d697184"
+    size: 6790267584
     format: gguf
     precision: q6_k
     vram_required: 14336
@@ -75,8 +55,8 @@ variants:
   - id: gguf-q5-k-m
     file: ernie-image-Q5_K_M.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q5_K_M.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_q5_k_m"
-    size: 5930000000
+    sha256: "4ce6f0f7522ce352550f5a998684f997c9e9a3f01335482af389494f5440837f"
+    size: 5932958400
     format: gguf
     precision: q5_k_m
     vram_required: 12288
@@ -86,8 +66,8 @@ variants:
   - id: gguf-q4-k-m
     file: ernie-image-Q4_K_M.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q4_K_M.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_q4_k_m"
-    size: 5020000000
+    sha256: "d8bcc9015692c964828c356c9888cc296f0a83aeacd3c2e52f1e0c06047fdd82"
+    size: 5019124416
     format: gguf
     precision: q4_k_m
     vram_required: 10240
@@ -97,8 +77,8 @@ variants:
   - id: gguf-q3-k-m
     file: ernie-image-Q3_K_M.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q3_K_M.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_q3_k_m"
-    size: 3910000000
+    sha256: "fe258cb361db90c72e166778bbd7f78c8bf42860af495d938b3725a8407ec480"
+    size: 3909632704
     format: gguf
     precision: q3_k_m
     vram_required: 8192
@@ -108,8 +88,8 @@ variants:
   - id: gguf-q2-k
     file: ernie-image-Q2_K.gguf
     url: https://huggingface.co/unsloth/ERNIE-Image-GGUF/resolve/main/ernie-image-Q2_K.gguf
-    sha256: "VERIFY_HASH_ernie_image_gguf_q2_k"
-    size: 3180000000
+    sha256: "3051ef978ae0c49c9acffe18289d48e48cc5ee794e4c4928af97f11c4aab1401"
+    size: 3178545856
     format: gguf
     precision: q2_k
     vram_required: 6144
@@ -138,7 +118,6 @@ tags:
   - bilingual
   - gguf
 
-rating: 4.7
-downloads: 348
+downloads: 0
 added: "2026-04-16"
 updated: "2026-04-16"

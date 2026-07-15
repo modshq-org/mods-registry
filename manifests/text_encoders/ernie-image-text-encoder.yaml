@@ -12,12 +12,12 @@ description: |
 
 file:
   url: https://huggingface.co/baidu/ERNIE-Image/resolve/main/text_encoder/model.safetensors
-  sha256: "VERIFY_HASH_ernie_image_text_encoder"
-  size: 6500000000
+  sha256: "2a22fd3bf83d56eed4ee8a7ddbe220281cc9fc622b4e8a6d250c8ffdff11b443"
+  size: 7698241104
   format: safetensors
 
 tags: [ernie, text-encoder, ministral, baidu]
-rating: 5.0
-downloads: 348
+
+downloads: 0
 added: "2026-04-16"
 updated: "2026-04-16"
