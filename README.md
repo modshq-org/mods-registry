@@ -63,6 +63,13 @@ modl install flux-dev    # Install a model
 modl info flux-dev       # View model details, cloud availability
 ```
 
+## Curation Policy
+
+We curate official model weights, functional LoRAs (distillation, editing,
+conditioning), and adherence tools — always with pinned hashes and clear
+provenance. We do not curate content LoRAs (styles, characters, NSFW);
+those can still be installed directly from CivitAI or HuggingFace URLs.
+
 ## For Contributors
 
 Want to add a model or recipe? See [CONTRIBUTING.md](CONTRIBUTING.md).

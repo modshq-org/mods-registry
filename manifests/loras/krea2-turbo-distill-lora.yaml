@@ -1,0 +1,62 @@
+id: krea2-turbo-distill-lora
+name: "Krea 2 Turbo Distill LoRA (SVD Extract)"
+type: lora
+architecture: krea2
+author: TheDivergentAI
+license: krea-2-community
+homepage: https://huggingface.co/TheDivergentAI/krea2-turbo-distill-lora
+description: |
+  Post-hoc LoRA extracted from the weight delta between Krea-2-Turbo and
+  Krea-2-Raw via truncated SVD. Applied to krea-2-raw it approximates Turbo
+  behavior without swapping the full checkpoint. Two recipes:
+  full strength + 8 steps + CFG 0 ≈ the Turbo model; partial strength
+  (0.5–0.6) + 12–15 steps + CFG ~1.5 is the community "quality mode" —
+  much better seed variance and fine detail than Turbo while staying fast.
+  modl wires both through `--fast` / the workflow `fast:` field on
+  krea-2-raw. Unlike Turbo's baked-in distillation, the LoRA stacks with
+  character/style LoRAs. Community extract, not an official Krea release;
+  hash-pinned.
+
+variants:
+  - id: r256
+    file: krea2_turbo_distill_r256.safetensors
+    url: https://huggingface.co/TheDivergentAI/krea2-turbo-distill-lora/resolve/main/krea2_turbo_distill_r256.safetensors
+    sha256: "ca178303453e1152d0e08a36240509b4711c3ccb7596915a20e910c973dd42ae"
+    size: 1872209738
+    format: safetensors
+    note: "Rank 256 — closest fit to Turbo (community-recipe default; what modl's fast mode uses)."
+
+  - id: r128
+    file: krea2_turbo_distill_r128.safetensors
+    url: https://huggingface.co/TheDivergentAI/krea2-turbo-distill-lora/resolve/main/krea2_turbo_distill_r128.safetensors
+    sha256: "0cd8b6a756456229b340d2382f30f91bd8540f9cdee4fb95edb897daf08f8c6f"
+    size: 936944890
+    format: safetensors
+    note: "Rank 128 — half the size, ~94% of the singular energy. Upstream's recommended starting point."
+
+  - id: r64
+    file: krea2_turbo_distill_r64.safetensors
+    url: https://huggingface.co/TheDivergentAI/krea2-turbo-distill-lora/resolve/main/krea2_turbo_distill_r64.safetensors
+    sha256: "8f8a1d084a20363269a907413ab627dfbfdfbb0add831a7ce87a89ad1a333931"
+    size: 469312122
+    format: safetensors
+    note: "Rank 64 — smallest; rougher fit."
+
+base_models: [krea-2-raw]
+
+category: acceleration
+
+recommended_weight: 1.0
+weight_range: [0.5, 1.0]
+
+tags:
+  - krea
+  - lora
+  - distillation
+  - fast-inference
+  - quality-mode
+
+rating: 4.5
+downloads: 0
+added: "2026-07-17"
+updated: "2026-07-17"
