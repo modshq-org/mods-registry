@@ -1,0 +1,26 @@
+id: krea2-qwen3-vl-4b-text-encoder
+name: "Krea 2 Qwen3-VL 4B Text Encoder"
+type: text_encoder
+visibility: internal
+architecture: qwen3-vl
+author: Krea / Qwen
+license: apache-2.0
+homepage: https://huggingface.co/krea/Krea-2-Turbo
+description: |
+  Qwen3-VL 4B text encoder vendored by krea/Krea-2-Turbo. Single file in
+  proper Qwen3VLModel key layout (language_model.* / visual.*) — required
+  by Krea 2 models, which tap 12 intermediate decoder layers for text
+  conditioning. Do not substitute the Comfy-Org single file: its keys are
+  "model."-prefixed (ForConditionalGeneration layout) and will not load.
+
+file:
+  url: https://huggingface.co/krea/Krea-2-Turbo/resolve/main/text_encoder/model.safetensors
+  sha256: "8434db05292f95e0041589a7c82abeb39385be59c85b54ae11caa7b45e9f4f13"
+  size: 8875715136
+  format: safetensors
+
+tags: [krea, text-encoder, qwen3-vl]
+rating: 5.0
+downloads: 0
+added: "2026-07-17"
+updated: "2026-07-17"
