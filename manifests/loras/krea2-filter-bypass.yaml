@@ -1,0 +1,45 @@
+id: krea2-filter-bypass
+name: "Krea 2 Filter Bypass (Adherence Patch)"
+type: lora
+architecture: krea2
+author: uzumix
+license: krea-2-community
+homepage: https://huggingface.co/uzumix/krea2filterbypass3.safetensors
+description: |
+  Prompt-adherence patch for Krea 2. Krea baked a content filter into the
+  released weights that also dampens adherence for benign content: strong
+  facial expressions, blood and injuries, unusual body types, and some
+  poses come back quietly sanitized. This patch is a single 48-byte weight
+  delta on the text-fusion projector (the [1,12] vector that mixes the 12
+  tapped Qwen3-VL text-encoder layers) — it rescales the alignment
+  directions and adds zero content knowledge. Apply as a LoRA at strength
+  0.4–1.0; raise the strength until adherence returns. Works on both
+  krea-2-turbo and krea-2-raw. This is a ComfyUI-style additive diff patch,
+  not a lora_A/lora_B adapter; the modl worker detects and applies it
+  natively ("stripped" variant: touches no visual layers, quality-neutral
+  at moderate strength).
+
+file:
+  name: krea2filterbypass3.safetensors
+  url: https://huggingface.co/uzumix/krea2filterbypass3.safetensors/resolve/main/krea2filterbypass3.safetensors
+  sha256: "ec5901a2d0b8f4e4e1e7e62fe4567566f0837799f7a413b03a06f72f47934dda"
+  size: 160
+  format: safetensors
+
+base_models: [krea-2-turbo, krea-2-raw]
+
+category: technique
+
+recommended_weight: 0.8
+weight_range: [0.4, 1.0]
+
+tags:
+  - krea
+  - adherence
+  - diff-patch
+  - technique
+
+rating: 4.0
+downloads: 0
+added: "2026-07-17"
+updated: "2026-07-17"
